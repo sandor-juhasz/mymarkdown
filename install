@@ -2,8 +2,9 @@
 
 mvn install
 
-echo "Creating ~/.local/share/mymarkdown directory..."
+echo "Creating destination directories..."
 mkdir -p ~/.local/share/mymarkdown
+mkdir -p ~/.local/bin
 
 echo "Copying mymarkdown.jar..."
 cp target/MyMarkdown-1.0-SNAPSHOT-jar-with-dependencies.jar ~/.local/share/mymarkdown/mymarkdown.jar
