@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+mvn install
+
+echo "Creating ~/.local/share/mymarkdown directory..."
+mkdir -p ~/.local/share/mymarkdown
+
+echo "Copying mymarkdown.jar..."
+cp target/MyMarkdown-1.0-SNAPSHOT-jar-with-dependencies.jar ~/.local/share/mymarkdown/mymarkdown.jar
+
+echo "Copying mymarkdown wrapper..."
+cp mymarkdown ~/.local/bin
+
+echo "Done"
+
+
+

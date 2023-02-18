@@ -1,0 +1,14 @@
+This is a header
+================
+
+%%%exercise
+Open a file with the new try-catch block.
+===
+```java
+try (Reader in = new FileReader("filename.txt") {
+   .. Do something here.
+}
+```
+%%%
+
+This is a paragraph.
