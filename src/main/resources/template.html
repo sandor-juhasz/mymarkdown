@@ -3,7 +3,39 @@
    <head>
       <title>GIT Exercises</title>
       <link rel="stylesheet" type="text/css" href="style.css">
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+      <style>
+         body {
+            counter-reset: section;
+            font-size: 10px;
+            font-family: sans-serif;
+         }
+
+         h1{counter-reset: subsection}
+
+         h1:before{
+            counter-increment: section;
+            content: counter(section) ". ";
+         }
+
+         h2{counter-reset: question}
+
+         h2:before{
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) ". ";
+         } 
+
+         div.question:before{
+            counter-increment: question;
+            content: counter(section) "." counter(subsection) "." counter(question) ". ";
+         }
+
+         div.exercise {
+            margin-left: 2em;
+         }
+
+         div.answer {margin-left:4em;}
+      </style>
    </head>
    <body>
       <<CONTENT>>

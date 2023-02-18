@@ -2,7 +2,7 @@ package hu.sjuhasz.mymarkdown.processor;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +12,8 @@ public class PageTemplateProcessor extends AbstractProcessor {
 
     private String pageTemplateFileName;
     private Processor contentProcessor;
-    private List<String> staticFiles = Arrays.asList("style.css");
+    //private List<String> staticFiles = Arrays.asList("style.css");
+    private List<String> staticFiles = new ArrayList<>();
 
     public PageTemplateProcessor(String pageTemplateFileName, Processor contentProcessor) {
         this.pageTemplateFileName= pageTemplateFileName;
