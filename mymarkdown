@@ -1,3 +1,10 @@
 #!/bin/bash
 
-java -jar ~/.local/share/mymarkdown/mymarkdown.jar "$@"
+if [ "$EUID" -ne 0 ]; then
+    mymarkdown_path=$HOME/.local/share/mymarkdown
+else
+    mymarkdown_path=/usr/local/share/mymarkdown
+fi
+
+java -jar "$mymarkdown_path/mymarkdown.jar" "$@"
+

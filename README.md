@@ -54,3 +54,21 @@ Print &ldquo;Hello World!&rdquo; in Bash.</div>
 The converter currently contains a built in template and css which is used 
 to generate the html file. The style.css file is also generated in the same
 directory.
+
+## Usage of the container
+
+To build the mymarkdown container, execute
+
+```shell
+docker build . -t sjuhasz/mymarkdown
+```
+
+To execute the container, mount the directory to be processed under /mnt. The
+HTML files will be generated under `/mnt/target`.
+
+```shell
+dir_to_process=/mnt/c/Dev/Projects/t
+docker run --rm \
+    --mount "type=bind,source=$dir_to_process,target=/mnt" \
+    sjuhasz/mymarkdown
+```

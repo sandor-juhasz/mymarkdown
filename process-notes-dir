@@ -1,0 +1,24 @@
+#!/bin/bash
+
+function process_markdown() {
+    local filename=$1
+    if [[ ! -e "${filename}" ]]; then
+        echo "ERROR: $filename not found."
+        return 1
+    fi
+    echo Processing "${filename}"
+    mkdir -p "target/$(dirname $filename)"
+    mymarkdown "${filename}" "target/${filename}.html"
+}
+
+export -f process_markdown
+
+#find -path ./target -prune -o -regex ".*\.md" -exec bash -c 'process_markdown "$0"' {} \;
+
+echo "Switching to directory $1..."
+cd $1 || exit 1
+
+echo "Processing .md files..."
+find -type d \( -path ./target \) -prune -o \
+     -regex ".*\.md" \
+     -exec bash -c 'process_markdown "$0"' {} \;
