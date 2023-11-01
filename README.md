@@ -24,7 +24,7 @@ answer.
 ## Installation 
 
 ```shell
-mvn install
+curl -fsSL https://raw.githubusercontent.com/sandor-juhasz/mymarkdown/main/install.sh | bash -s
 ./install
 ```
 
