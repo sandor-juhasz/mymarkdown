@@ -1,5 +1,8 @@
 name: Build and Release MyMarkdown
-on: [push]
+on:
+  push:
+    tags:
+      - 'v*'
 permissions:
   contents: write
 jobs:
@@ -27,7 +30,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-#          tag_name: latest
+          tag_name: ${{ github.ref }}
           release_name: mymarkdown
           draft: true
           prerelease: false
