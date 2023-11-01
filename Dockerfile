@@ -1,3 +1,7 @@
+#
+# Containerized binary version of MyMarkdown
+#
+
 FROM amazoncorretto:20
 COPY target/MyMarkdown-1.0-SNAPSHOT-jar-with-dependencies.jar /usr/local/share/mymarkdown/mymarkdown.jar
 COPY mymarkdown /usr/local/bin/mymarkdown

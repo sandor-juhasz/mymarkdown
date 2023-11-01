@@ -1,0 +1,9 @@
+{
+	"name": "LearningNotes",
+
+	"image": "ghcr.io/sandor-juhasz/devcontainer-images/java-17:latest",
+
+	"features": {
+		// "ghcr.io/sandor-juhasz/devcontainer-features/utilities:latest": {} Bug: cannot install without base setup performed in toolset setup.
+	}
+}
