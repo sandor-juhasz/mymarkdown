@@ -7,7 +7,7 @@ mkdir -p "${TEMP_DIR}"
 pushd "${TEMP_DIR}"
 
 echo "Downloading MyMarkdown..."
-curl -fsSL https://github.com/sandor-juhasz/mymarkdown/releases/download/latest/mymarkdown.zip -o mymarkdown.zip
+curl -fsSL https://github.com/sandor-juhasz/mymarkdown/releases/download/v1.0/mymarkdown.zip -o mymarkdown.zip
 
 echo "Unpacking..."
 unzip mymarkdown.zip
